@@ -1,0 +1,12 @@
+/var/log/nsd/nsd.log
+{
+    daily
+    rotate 90
+    size 50M
+    missingok
+    compress
+    create 644 nsd nsd
+    postrotate
+        /etc/init.d/nsd reload
+    endscript
+}
